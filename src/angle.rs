@@ -1,5 +1,7 @@
 use crate::Unit;
-use derive_more::{Add, AsRef, Constructor, Div, From, Mul, Rem, Sub};
+use derive_more::{
+    Add, AddAssign, AsRef, Constructor, Div, DivAssign, From, Mul, MulAssign, Rem, Sub, SubAssign,
+};
 use std::f64::consts::PI;
 
 pub trait Angle: Unit + Into<Radians> + Into<Degrees> {
@@ -21,7 +23,23 @@ pub trait Angle: Unit + Into<Radians> + Into<Degrees> {
 }
 
 #[derive(
-    Constructor, Clone, Copy, Debug, PartialEq, PartialOrd, Add, Sub, Mul, Div, Rem, AsRef, From,
+    Constructor,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Add,
+    AddAssign,
+    Sub,
+    SubAssign,
+    Mul,
+    MulAssign,
+    Div,
+    DivAssign,
+    Rem,
+    AsRef,
+    From,
 )]
 pub struct Degrees(f64);
 
@@ -39,7 +57,23 @@ impl From<Radians> for Degrees {
 }
 
 #[derive(
-    Constructor, Clone, Copy, Debug, PartialEq, PartialOrd, Add, Sub, Mul, Div, Rem, AsRef, From,
+    Constructor,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Add,
+    AddAssign,
+    Sub,
+    SubAssign,
+    Mul,
+    MulAssign,
+    Div,
+    DivAssign,
+    Rem,
+    AsRef,
+    From,
 )]
 pub struct Radians(f64);
 

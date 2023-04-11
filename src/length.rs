@@ -1,5 +1,7 @@
 use crate::Unit;
-use derive_more::{Add, AsRef, Constructor, Div, From, Mul, Rem, Sub};
+use derive_more::{
+    Add, AddAssign, AsRef, Constructor, Div, DivAssign, From, Mul, MulAssign, Rem, Sub, SubAssign,
+};
 
 pub trait Length: Unit + Into<Meters> + Into<Kilometers> + Into<Miles> {
     fn meters(self) -> Meters {
@@ -14,7 +16,23 @@ pub trait Length: Unit + Into<Meters> + Into<Kilometers> + Into<Miles> {
 }
 
 #[derive(
-    Constructor, Clone, Copy, Debug, PartialEq, PartialOrd, Add, Sub, Mul, Div, Rem, AsRef, From,
+    Constructor,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Add,
+    AddAssign,
+    Sub,
+    SubAssign,
+    Mul,
+    MulAssign,
+    Div,
+    DivAssign,
+    Rem,
+    AsRef,
+    From,
 )]
 pub struct Meters(f64);
 
@@ -38,7 +56,23 @@ impl From<Miles> for Meters {
 }
 
 #[derive(
-    Constructor, Clone, Copy, Debug, PartialEq, PartialOrd, Add, Sub, Mul, Div, Rem, AsRef, From,
+    Constructor,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Add,
+    AddAssign,
+    Sub,
+    SubAssign,
+    Mul,
+    MulAssign,
+    Div,
+    DivAssign,
+    Rem,
+    AsRef,
+    From,
 )]
 pub struct Kilometers(f64);
 
@@ -62,7 +96,23 @@ impl From<Miles> for Kilometers {
 }
 
 #[derive(
-    Constructor, Clone, Copy, Debug, PartialEq, PartialOrd, Add, Sub, Mul, Div, Rem, AsRef, From,
+    Constructor,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Add,
+    AddAssign,
+    Sub,
+    SubAssign,
+    Mul,
+    MulAssign,
+    Div,
+    DivAssign,
+    Rem,
+    AsRef,
+    From,
 )]
 pub struct Miles(f64);
 

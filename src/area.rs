@@ -1,6 +1,8 @@
 use crate::length::Meters;
 use crate::Unit;
-use derive_more::{Add, AsRef, Constructor, Div, From, Mul, Rem, Sub};
+use derive_more::{
+    Add, AddAssign, AsRef, Constructor, Div, DivAssign, From, Mul, MulAssign, Rem, Sub, SubAssign,
+};
 
 pub trait Area: Unit + Into<SquareMeters> {
     fn square_meters(self) -> SquareMeters {
@@ -9,7 +11,23 @@ pub trait Area: Unit + Into<SquareMeters> {
 }
 
 #[derive(
-    Constructor, Clone, Copy, Debug, PartialEq, PartialOrd, Add, Sub, Mul, Div, Rem, AsRef, From,
+    Constructor,
+    Clone,
+    Copy,
+    Debug,
+    PartialEq,
+    PartialOrd,
+    Add,
+    AddAssign,
+    Sub,
+    SubAssign,
+    Mul,
+    MulAssign,
+    Div,
+    DivAssign,
+    Rem,
+    AsRef,
+    From,
 )]
 pub struct SquareMeters(f64);
 
